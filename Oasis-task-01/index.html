@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculator</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-100 flex items-center justify-center h-screen">
+
+  <div class="calculator bg-white p-6 rounded-lg shadow-lg">
+    <input type="text" id="display" class="input w-full mb-4 p-4 text-right border border-gray-300 rounded" disabled>
+    <div class="grid grid-cols-4 gap-4">
+      <button class="button bg-red-500 text-white rounded hover:bg-red-600" onclick="clearDisplay()">C</button>
+      <button class="button bg-yellow-500 text-white rounded hover:bg-yellow-600" onclick="deleteLast()">DEL</button>
+      <button class="button bg-blue-500 text-white rounded hover:bg-blue-600" onclick="appendToDisplay('/')">/</button>
+      <button class="button bg-blue-500 text-white rounded hover:bg-blue-600" onclick="appendToDisplay('*')">*</button>
+      <button class="button bg-gray-200 text-black rounded hover:bg-gray-300" onclick="appendToDisplay('7')">7</button>
+      <button class="button bg-gray-200 text-black rounded hover:bg-gray-300" onclick="appendToDisplay('8')">8</button>
+      <button class="button bg-gray-200 text-black rounded hover:bg-gray-300" onclick="appendToDisplay('9')">9</button>
+      <button class="button bg-blue-500 text-white rounded hover:bg-blue-600" onclick="appendToDisplay('-')">-</button>
+      <button class="button bg-gray-200 text-black rounded hover:bg-gray-300" onclick="appendToDisplay('4')">4</button>
+      <button class="button bg-gray-200 text-black rounded hover:bg-gray-300" onclick="appendToDisplay('5')">5</button>
+      <button class="button bg-gray-200 text-black rounded hover:bg-gray-300" onclick="appendToDisplay('6')">6</button>
+      <button class="button bg-blue-500 text-white rounded hover:bg-blue-600" onclick="appendToDisplay('+')">+</button>
+      <button class="button bg-gray-200 text-black rounded hover:bg-gray-300" onclick="appendToDisplay('1')">1</button>
+      <button class="button bg-gray-200 text-black rounded hover:bg-gray-300" onclick="appendToDisplay('2')">2</button>
+      <button class="button bg-gray-200 text-black rounded hover:bg-gray-300" onclick="appendToDisplay('3')">3</button>
+      <button class="button bg-gray-200 text-black rounded hover:bg-gray-300" onclick="appendToDisplay('0')">0</button>
+      <button class="button bg-gray-200 text-black rounded hover:bg-gray-300" onclick="appendToDisplay('.')">.</button>
+      <button class="button bg-gray-200 text-black rounded hover:bg-gray-300" onclick="appendToDisplay('(')">(</button>
+
+      <button class="button bg-gray-200 text-black rounded hover:bg-gray-300" onclick="appendToDisplay(')')">)</button>
+      <button class="button bg-green-500 text-white rounded hover:bg-green-600" onclick="calculateResult()">=</button>
+      <button class="button bg-purple-500 text-white rounded hover:bg-purple-600" onclick="calculateSquareRoot()">√</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

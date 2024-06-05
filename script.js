@@ -1,31 +1,29 @@
+const display = document.getElementById('display');
+
 function clearDisplay() {
-  document.getElementById("display").value = "";
+    display.innerText = '0';
 }
 
 function deleteLast() {
-  const display = document.getElementById("display");
-  display.value = display.value.slice(0, -1);
+    if (display.innerText.length === 1) {
+        display.innerText = '0';
+    } else {
+        display.innerText = display.innerText.slice(0, -1);
+    }
 }
 
-function appendToDisplay(value) {
-  const display = document.getElementById("display");
-  display.value += value;
+function appendCharacter(char) {
+    if (display.innerText === '0' && char !== '.') {
+        display.innerText = char;
+    } else {
+        display.innerText += char;
+    }
 }
 
 function calculateResult() {
-  const display = document.getElementById("display");
-  try {
-    display.value = eval(display.value);
-  } catch (error) {
-    display.value = "Error";
-  }
-}
-
-function calculateSquareRoot() {
-  const display = document.getElementById("display");
-  try {
-    display.value = Math.sqrt(eval(display.value));
-  } catch (error) {
-    display.value = "Error";
-  }
+    try {
+        display.innerText = eval(display.innerText.replace('%', '/100'));
+    } catch {
+        display.innerText = 'Error';
+    }
 }
